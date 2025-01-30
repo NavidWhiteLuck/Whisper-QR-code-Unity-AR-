@@ -64,3 +64,13 @@
 
 ## نتیجه‌گیری
 این پروژه یک اپلیکیشن کاربردی برای اسکن، ایجاد و اشتراک‌گذاری QR Code همراه با قابلیت AR و کامنت‌گذاری ارائه می‌دهد. با استفاده از این اپلیکیشن، کاربران می‌توانند محتواهای خود را در بستر QR Code مدیریت کرده و با دیگران به اشتراک بگذارند.
+
+## منابع
+
+- **Unity Documentation**: [https://docs.unity3d.com](https://docs.unity3d.com)
+- **PlayFab Documentation**: [https://docs.microsoft.com/en-us/gaming/playfab/](https://docs.microsoft.com/en-us/gaming/playfab/)
+- **ZXing Library for QR Code Scanning**: [https://github.com/zxing/zxing](https://github.com/zxing/zxing)
+- **Firebase Authentication**: [https://firebase.google.com/docs/auth](https://firebase.google.com/docs/auth)
+- **DOTween Animation Library**: [https://dotween.demigiant.com](https://dotween.demigiant.com)
+- **Vuforia for AR**: [https://developer.vuforia.com](https://developer.vuforia.com)
+- **AR Foundation in Unity**: [https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@latest](https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@latest)
