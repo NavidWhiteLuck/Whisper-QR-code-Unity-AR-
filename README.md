@@ -58,6 +58,33 @@
 
 ### ۲. بهینه‌سازی عملکرد
 - استفاده از Local Cache برای کاهش درخواست‌های PlayFab
+```
+  private Dictionary<string, string> qrCodeCache = new Dictionary<string, string>();
+
+public void FetchQRCodeData(string qrId)
+{
+    if (qrCodeCache.ContainsKey(qrId))
+    {
+        Debug.Log("Loaded from cache: " + qrCodeCache[qrId]);
+        DisplayQRCodeData(qrCodeCache[qrId]);
+        return;
+    }
+
+    PlayFabClientAPI.GetUserData(new GetUserDataRequest(), result =>
+    {
+        if (result.Data.ContainsKey("QRCode_" + qrId))
+        {
+            string qrData = result.Data["QRCode_" + qrId].Value;
+            qrCodeCache[qrId] = qrData;
+            DisplayQRCodeData(qrData);
+        }
+        else
+        {
+            Debug.Log("No data found for QR Code.");
+        }
+    }, error => Debug.LogError("Error fetching QR Code data: " + error.ErrorMessage));
+}
+```
 - نمایش ۲۰ کامنت آخر به جای دریافت کل کامنت‌ها برای بهینه‌سازی سرعت
 - استفاده از DOTween برای انیمیشن‌های روان در رابط کاربری
 
