@@ -72,5 +72,4 @@
 - **ZXing Library for QR Code Scanning**: [https://github.com/zxing/zxing](https://github.com/zxing/zxing)
 - **Firebase Authentication**: [https://firebase.google.com/docs/auth](https://firebase.google.com/docs/auth)
 - **DOTween Animation Library**: [https://dotween.demigiant.com](https://dotween.demigiant.com)
-- **Vuforia for AR**: [https://developer.vuforia.com](https://developer.vuforia.com)
 - **AR Foundation in Unity**: [https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@latest](https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@latest)
