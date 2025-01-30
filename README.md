@@ -58,7 +58,7 @@
 
 ### ۲. بهینه‌سازی عملکرد
 - استفاده از Local Cache برای کاهش درخواست‌های PlayFab
-```
+```C#
   private Dictionary<string, string> qrCodeCache = new Dictionary<string, string>();
 
 public void FetchQRCodeData(string qrId)
@@ -86,6 +86,27 @@ public void FetchQRCodeData(string qrId)
 }
 ```
 - نمایش ۲۰ کامنت آخر به جای دریافت کل کامنت‌ها برای بهینه‌سازی سرعت
+```
+private const int MaxCommentsToShow = 20;
+
+public void FetchComments(string qrId)
+{
+    PlayFabClientAPI.GetUserData(new GetUserDataRequest(), result =>
+    {
+        if (result.Data.ContainsKey("Comments_" + qrId))
+        {
+            List<string> comments = result.Data["Comments_" + qrId].Value.Split(';').ToList();
+            comments = comments.Take(MaxCommentsToShow).ToList(); // فقط ۲۰ کامنت نمایش بده
+
+            DisplayComments(comments);
+        }
+        else
+        {
+            Debug.Log("No comments found.");
+        }
+    }, error => Debug.LogError("Error fetching comments: " + error.ErrorMessage));
+}
+```
 - استفاده از DOTween برای انیمیشن‌های روان در رابط کاربری
 
 ## نتیجه‌گیری
