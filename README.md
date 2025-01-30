@@ -96,7 +96,7 @@ public void FetchComments(string qrId)
         if (result.Data.ContainsKey("Comments_" + qrId))
         {
             List<string> comments = result.Data["Comments_" + qrId].Value.Split(';').ToList();
-            comments = comments.Take(MaxCommentsToShow).ToList(); // فقط ۲۰ کامنت نمایش بده
+            comments = comments.Take(MaxCommentsToShow).ToList(); // tanha namayesh 20 comment
 
             DisplayComments(comments);
         }
