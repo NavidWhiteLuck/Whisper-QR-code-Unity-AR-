@@ -86,7 +86,7 @@ public void FetchQRCodeData(string qrId)
 }
 ```
 - نمایش ۲۰ کامنت آخر به جای دریافت کل کامنت‌ها برای بهینه‌سازی سرعت
-```
+```C#
 private const int MaxCommentsToShow = 20;
 
 public void FetchComments(string qrId)
@@ -108,6 +108,20 @@ public void FetchComments(string qrId)
 }
 ```
 - استفاده از DOTween برای انیمیشن‌های روان در رابط کاربری
+```C#
+public void ShowCommentsPanel()
+{
+    commentsPanel.transform.DOScale(1, 0.2f).SetEase(Ease.OutQuad);
+}
+
+public void HideCommentsPanel()
+{
+    commentsPanel.transform.DOScale(0, 0.2f).SetEase(Ease.InQuad).OnComplete(() =>
+    {
+        commentsPanel.SetActive(false);
+    });
+}
+```
 
 ## نتیجه‌گیری
 این پروژه یک اپلیکیشن کاربردی برای اسکن، ایجاد و اشتراک‌گذاری QR Code همراه با قابلیت AR و کامنت‌گذاری ارائه می‌دهد. با استفاده از این اپلیکیشن، کاربران می‌توانند محتواهای خود را در بستر QR Code مدیریت کرده و با دیگران به اشتراک بگذارند.
